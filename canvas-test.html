@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="application/javascript">
+    function draw(){
+      var canvas = document.getElementById('first');
+     if (canvas.getContext){
+      var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'rgb(200,0,0)';
+        ctx.fillRect (10, 10, 50, 50);
+        ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+        ctx.fillRect (30, 30, 50, 50);
+        ctx.strokeRect(100, 40, 10, 10);
+        ctx.clearRect(10, 10, 20, 20);
+        ctx.clearRect(60, 60, 20, 20);
+        ctx.beginPath();
+        ctx.moveTo(225, 150);
+        ctx.lineTo(200, 175);//middlepoint and point from with all lines are drawn from
+        ctx.lineTo(200, 125);
+        ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.moveTo(165, 150);
+        ctx.lineTo(190, 175);//middlepoint and point from with all lines are drawn from
+        ctx.lineTo(190, 125);
+        ctx.lineTo(165, 150); //closes triangle
+        ctx.stroke();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.arc(195, 150, 50, 0, Math.PI *2, true)
+        ctx.stroke();
+        ;
+      }
+    }
+  </script>
+  <style type="text/css">
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+  <body onload="draw();">
+    <canvas width="400" height="20">If you're seeing this then your browser doesn't support much of the content on this page</canvas>
+    <canvas id="first" width="400" height="300"></canvas>
+  </body>
+</html>
