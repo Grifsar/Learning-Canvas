@@ -4,68 +4,96 @@
   <title></title>
   <script type="application/javascript">
     function draw(){
-    var canvas = document.getElementById('first');
-    var canvas2 = document.getElementById('second');
-    
-    if (canvas.getContext){
-      var ctx = canvas.getContext('2d');
-        ctx.fillStyle = 'rgb(200,0,0)';
-        ctx.fillRect (10, 10, 50, 50);
-        ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
-        ctx.fillRect (30, 30, 50, 50);
-        ctx.strokeRect(100, 40, 10, 10);
-        ctx.clearRect(10, 10, 20, 20);
-        ctx.clearRect(60, 60, 20, 20);
-        ctx.beginPath();
-        ctx.moveTo(225, 150);
-        ctx.lineTo(200, 175);//middlepoint and point from with all lines are drawn from
-        ctx.lineTo(200, 125);
-        ctx.fillStyle = 'rgba(0, 0, 0, 1)';
-        ctx.fill();
-        ctx.closePath();
-        ctx.beginPath();
-        ctx.moveTo(165, 150);
-        ctx.lineTo(190, 175);//middlepoint and point from with all lines are drawn from
-        ctx.lineTo(190, 125);
-        ctx.lineTo(165, 150); //closes triangle
-        ctx.stroke();
-        ctx.closePath();
-        ctx.beginPath();
-        ctx.arc(195, 150, 50, 0, Math.PI *2, true)
-        ctx.stroke();
-        ctx.closePath();
-      }
+      var canvas = document.getElementById('first');
+      var canvas2 = document.getElementById('second');
+      var canvas3 = document.getElementById('third');
+      if (canvas.getContext){
+        var ctx = canvas.getContext('2d');
+          ctx.fillStyle = 'rgb(200,0,0)';
+          ctx.fillRect (10, 10, 50, 50);
+          ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+          ctx.fillRect (30, 30, 50, 50);
+          ctx.strokeRect(100, 40, 10, 10);
+          ctx.clearRect(10, 10, 20, 20);
+          ctx.clearRect(60, 60, 20, 20);
+          ctx.beginPath();
+          ctx.moveTo(225, 150);
+          ctx.lineTo(200, 175);//middlepoint and point from with all lines are drawn from
+          ctx.lineTo(200, 125);
+          ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+          ctx.fill();
+          ctx.closePath();
+          ctx.beginPath();
+          ctx.moveTo(165, 150);
+          ctx.lineTo(190, 175);//middlepoint and point from with all lines are drawn from
+          ctx.lineTo(190, 125);
+          ctx.lineTo(165, 150); //closes triangle
+          ctx.stroke();
+          ctx.closePath();
+          ctx.beginPath();
+          ctx.arc(195, 150, 50, 0, Math.PI *2, true)
+          ctx.stroke();
+          ctx.closePath();
+        }
 
-    if (canvas2.getContext) {
-    var ctx2 = canvas2.getContext('2d');
-    ctx2.beginPath();
-    ctx2.moveTo(75, 25);
-    ctx2.quadraticCurveTo(25, 25, 25, 62.5);
-    ctx2.quadraticCurveTo(25, 100, 50, 100);
-    ctx2.quadraticCurveTo(50, 120, 30, 125);
-    ctx2.quadraticCurveTo(60, 120, 65, 100);
-    ctx2.quadraticCurveTo(125, 100, 125, 62.5);
-    ctx2.quadraticCurveTo(125, 25, 75, 25);
-    ctx2.stroke();
-    ctx2.closePath();
-    ctx2.beginPath();
-    ctx2.moveTo(100, 125);
-    ctx2.quadraticCurveTo( 150, 200, 200, 125);
-    ctx2.quadraticCurveTo( 250, 50, 300, 125);
-    ctx2.stroke();
-    ctx2.closePath();   
-    ctx2.beginPath();
-    ctx2.moveTo(300, 225);
-    ctx2.quadraticCurveTo( 250, 250, 200, 225);
-    ctx2.stroke();
-    ctx2.closePath();
-    ctx2.beginPath();
-    ctx2.moveTo(300, 250);
-    ctx2.quadraticCurveTo( 250, 250, 200, 250);
-    ctx2.stroke();
-    ctx2.closePath();    
+      if (canvas2.getContext){
+        var ctx2 = canvas2.getContext('2d');
+        ctx2.beginPath();
+        ctx2.moveTo(75, 25);
+        ctx2.quadraticCurveTo(25, 25, 25, 62.5);
+        ctx2.quadraticCurveTo(25, 100, 50, 100);
+        ctx2.quadraticCurveTo(50, 120, 30, 125);
+        ctx2.quadraticCurveTo(60, 120, 65, 100);
+        ctx2.quadraticCurveTo(125, 100, 125, 62.5);
+        ctx2.quadraticCurveTo(125, 25, 75, 25);
+        ctx2.stroke();
+        ctx2.closePath();
+        ctx2.beginPath();
+        ctx2.moveTo(100, 125);
+        ctx2.quadraticCurveTo( 150, 200, 200, 125);
+        ctx2.quadraticCurveTo( 250, 50, 300, 125);
+        ctx2.stroke();
+        ctx2.closePath();   
+        ctx2.beginPath();
+        ctx2.moveTo(300, 225);
+        ctx2.quadraticCurveTo( 250, 250, 200, 225);
+        ctx2.stroke();
+        ctx2.closePath();
+        ctx2.beginPath();
+        ctx2.moveTo(300, 250);
+        ctx2.quadraticCurveTo( 250, 250, 200, 250);
+        ctx2.stroke();
+        ctx2.closePath();    
+      }
+      if (canvas3.getContext){
+        var ctx3 = canvas3.getContext('2d');
+        ctx3.beginPath();
+        ctx3.moveTo(75, 40);
+        ctx3.bezierCurveTo(75, 37, 70, 25, 50, 25);
+        ctx3.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+        ctx3.bezierCurveTo(20, 80, 40, 102, 75, 120);
+        ctx3.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+        ctx3.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+        ctx3.bezierCurveTo(85, 25, 75, 37, 75, 40);
+        ctx3.fill();
+        ctx3.closePath();  
+        ctx3.beginPath();
+        ctx3.moveTo(200, 200);
+        ctx3.bezierCurveTo(220, 150, 250, 250, 250, 200);
+        ctx3.stroke();
+        ctx3.closePath();  
+        ctx3.beginPath();
+        ctx3.moveTo(170, 50);
+        ctx3.bezierCurveTo(150, 90, 200, 150, 170, 200);
+        ctx3.stroke();
+        ctx3.closePath();  
+        ctx3.beginPath();
+        ctx3.moveTo(150, 50);
+        ctx3.bezierCurveTo(150, 90, 200, 150, 300, 50);
+        ctx3.stroke();
+        ctx3.closePath();
+      }
     }
-  }
   </script>
   <style type="text/css">
     canvas {
@@ -73,10 +101,11 @@
     }
   </style>
 </head>
-  <body onload="draw();">
+   <body onload="draw();">
     <canvas width="400" height="20">If you're seeing this then your browser doesn't support much of the content on this page</canvas>
     <canvas id="first" width="400" height="300"></canvas>
     <canvas id="second" width="400" height="300"></canvas>
+    <canvas id="third" width="400" height="300"></canvas>
 
   </body>
 </html>
